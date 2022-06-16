@@ -4,7 +4,17 @@
     <router-link to="/about">About</router-link>
   </div>
   <router-view/>
+  <v-main-wrapper></v-main-wrapper>
 </template>
+
+<script>
+import vMainWrapper from './components/v-main-wrapper.vue'
+export default {
+  components: {
+    vMainWrapper
+  }
+}
+</script>
 
 <style>
 #app {
