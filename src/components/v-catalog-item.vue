@@ -1,18 +1,12 @@
 <template>
   <div class="v-catalog-item">
-    <h1>Item 1</h1>
-    <p>Price: 100$</p>
-    <button class="btn">Add to cart</button>
-  </div>
-  <div class="v-catalog-item">
-    <h1>Item 1</h1>
-    <p>Price: 100$</p>
-    <button class="btn">Add to cart</button>
-  </div>
-  <div class="v-catalog-item">
-    <h1>Item 1</h1>
-    <p>Price: 100$</p>
-    <button class="btn">Add to cart</button>
+    <h1 class="v-catalog-item__name">{{product_data.name}}</h1>
+    <p class="v-catalog-item__price">Price: {{product_data.price}}$</p>
+    <button 
+      class="v-catalog-item__add_to_cart_btn btn" 
+      @click="sendDataToParent"
+      >Add to cart
+    </button>
   </div>
 </template>
 
@@ -40,5 +34,10 @@ export default {
       }
     }
   },
+  methods: {
+    sendDataToParent() {
+      this.$emit( 'sendArticle', this.product_data.article )
+    }
+  }
 }
 </script>

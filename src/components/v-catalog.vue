@@ -5,8 +5,9 @@
       <v-catalog-item 
         v-for="product in products"
         :key="product.article"
+        :product_data="product"
+        @sendArticle="showChildArticleInConsole"
       >
-      
       </v-catalog-item>
     </div>
   </div>
@@ -65,6 +66,11 @@ import vCatalogItem from './v-catalog-item'
             available: true
           }
         ]
+      }
+    },
+    methods: {
+      showChildArticleInConsole(data) {
+        console.log(data)
       }
     }
   }
